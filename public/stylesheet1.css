@@ -135,7 +135,7 @@ a:hover {
   justify-self: center;
   margin-top: 10px;
   margin-bottom: 20px;
-  grid-area: 2/3/3/4;
+
   
 } 
 .hide2 {
@@ -242,12 +242,12 @@ a:hover {
   margin-top: 20px;
   grid-area: 1/3/2/4;
 }
-/* .rndColor_Box {
+.rndColor_Box {
   width: 200px;
   height: 200px;
   border: 1px solid black;
   grid-area: 1/3/3/4;
-} */
+}
 #h3-RCS {
   grid-area: 1/2/2/3;
   margin: 0;

@@ -10,13 +10,13 @@
   <!-- MIKE: I created a new stylesheet about and commented out the css for .hide1.  It no longer appears on the page.  Unless you see somehting else wrong, using an external stylesheet along with bootstrap doesn't seem to work.  This would seem indicate that the css must stay in the html file.  .hide2 and .hide3 are both appearing on the page. -->
 <style>
   /* Event Listeners CSS */
-/* .hide1 {
+.hide1 {
   background-color: purple;
   width: 100px;
   max-width: 100px;
   border: 2px black solid;
   border-radius: 50%;
-} */
+}
 .hide2 {
   background-color: yellow;
   width: 100px;
@@ -48,6 +48,67 @@
   width: 150px;
   height: 150px;
   background-color: #0000ff;
+  border: 2px black solid;
+}
+/* HSB CSS */
+#hsbCirc1 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #f00;
+  border: 1px solid black; 
+}
+#hsbCirc2 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #0f0;
+  border: 1px solid black;
+}
+#hsbCirc3 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #00f;
+  border: 1px solid black;
+}
+/* HEX CSS */
+
+#hexCirc1 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #f00;
+  border: 1px solid black;
+}
+#hexCirc2 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #0f0;
+  border: 1px solid black;
+}
+#hexCirc3 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #00f;
+  border: 1px solid black;
+}
+#rndColorbtn {
+  width: 200px;
+  height: 200px;
+  border-radius: 1px;
+}
+#mousePad {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+#chip4 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
   border: 2px black solid;
 }
 </style>
@@ -216,14 +277,14 @@
 <br>
     The first versions of Mosaic and Netscape Navigator used the X11 color names as the basis for their color lists, as both started as X Window System applications. Web colors have an unambiguous colorimetric definition, sRGB, which relates the chromaticities of a particular phosphor set, a given transfer curve, adaptive whitepoint, and viewing conditions.[4] These have been chosen to be similar to many real-world monitors and viewing conditions, in order to allow rendering to be fairly close to the specified values even without color management. User agents vary in the fidelity with which they represent the specified colors. More advanced user agents use color management to provide better color fidelity; this is particularly important for Web-to-print applications. </p>
 
-    <!-- <div id="hexCirc1"></div>
+    <div id="hexCirc1"></div>
     <div id="hsbCodeRed">RED  Hex: #FF0000</div>
 
     <div id="hexCirc2"></div>
     <div id="hsbCodeGreen">GREEN  Hex: #00FF00</div>
 
     <div id="hexCirc3"></div>
-    <div id="hsbCodeBlue">BLUE  Hex: #0000FF</div>     -->
+    <div id="hsbCodeBlue">BLUE  Hex: #0000FF</div>
 
 
     <div class="border-top mt-5 mb-3 col-10"></div>
