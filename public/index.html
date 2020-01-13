@@ -9,28 +9,7 @@
   <!-- <link rel="stylesheet" type=text/css href="stylesheet2.css"> -->
   <!-- MIKE: I created a new stylesheet about and commented out the css for .hide1.  It no longer appears on the page.  Unless you see somehting else wrong, using an external stylesheet along with bootstrap doesn't seem to work.  This would seem indicate that the css must stay in the html file.  .hide2 and .hide3 are both appearing on the page. -->
 <style>
-  /* Event Listeners CSS */
-.hide1 {
-  background-color: purple;
-  width: 100px;
-  max-width: 100px;
-  border: 2px black solid;
-  border-radius: 50%;
-}
-.hide2 {
-  background-color: yellow;
-  width: 100px;
-  height: 100px;
-  border: 2px black solid;
-  border-radius: 50%;
-}
-  .hide3 {
-  background-color: rgb(90, 226, 219);
-  width: 100px;
-  height: 100px;
-  border: 2px black solid;
-  border-radius: 50%;
-}
+
 /* RGB CSS */
 #chip1 {
   width: 150px;
@@ -199,24 +178,68 @@
 <!-- -----------------EVENT LISTENERS---------------- -->
 
 <div id="container" class="container">
-    <h3 class="col mt-3 mb-3">Practice w/Event Listeners</h3>
+    <h3 class="col mt-3 mb-3">Dynamic Elements Created w/Event Listeners</h3>
 
-    <p class="col" >This section of the page uses DOM manipulation to create elements and event listeners with standard JavaScript.
+    <p class="col" >This section uses DOM manipulation to create elements and event listeners with standard JavaScript.
     </p>
 
-    <div class="col-2 offest-4 d-flex" id="cm1">Click Me</div>
-    <div class="col-2 offest-4 d-flex" id="cm2">Click Me</div>
-    <div class="col-2 offest-4 d-flex"  id="cm3">Click Me</div>
+    <div class="col-8 offset-4" id="hide1"></div>
+    <button id="btn1" onclick="hideFunction1()" >Click Me</button>
+    
+    <div class="col-8" id="hide2"></div>
+    <button id="btn1" onclick="hideFunction2()">Click Me</button>
+
+    <div class="col-8" id="hide3"></div>
+    <button id="btn1" onclick="hideFunction3()">Click Me</button>
+
+    <!-- <div class="col-2 offest-4 d-flex" id="cm1">Click Me</div> -->
+    <!-- <div class="col-2 offest-4 d-flex" id="cm2">Click Me</div>
+    <div class="col-2 offest-4 d-flex"  id="cm3">Click Me</div> -->
    
     <div class="border-top mt-5 mb-3"></div>
+
+<style>
+
+#btn1 {
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid black
+}
+#hide1 {
+  display: inline-block;
+  background-color: purple;
+  width: 100px;
+  height: 100px;
+  border: 2px black solid;
+  border-radius: 50%;
+}
+#hide2 {
+  display: inline-block;
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  border: 2px black solid;
+  border-radius: 50%;
+}
+#hide3 {
+  display: inline-block;
+  background-color: rgb(90, 226, 219);
+  width: 100px;
+  height: 100px;
+  border: 2px black solid;
+  border-radius: 50%;
+}
+    </style>
 </div>
 <!-- -------------RANDOM COLOR SELECTORS--------------- -->
 <div id="container2" class="container">
   <h3 class="col mt-5 mb-3">Random Color Selectors</h3>
+  <p>This section uses Dom manipulation to create elements and random color selectors with standard JavaScript.</p>
+
   <div id="mousePad"></div> 
   <div id="mouse-pad_text">(Hover over the box.)</div>
 
-  <button id="rndColorbtn">Click Me</button>
+  <button class="col-3 offset-4" id="rndColorbtn">Click Me</button>
   <div class="rndColor_Box"></div>
   <div class="border-top mt-5 mb-3"></div>
 </div>
@@ -236,11 +259,13 @@
       <br>
       RGB is a device-dependent color model: different devices detect or reproduce a given RGB value differently, since the color elements (such as phosphors or dyes) and their response to the individual R, G, and B levels vary from manufacturer to manufacturer, or even in the same device over time. Thus an RGB value does not define the same color across devices without some kind of color management. 
     </p>
+<div class="col-8 offset-4 d-flex" id="chip1">RED</div>
+<div class="col-8 offset-4" id="redColorCode">rgb = (255, 0, 0)</div>
+<div class="col-9 offset-3 d-flex"id="chip2">GREEN</div>
+<div id="greenColorCode">rgb = (0, 255, 0)</div>
+<div id="chip3">BLUE</div>
+<div id="blueColorCode">rgb = (0, 0, 255)</div>
 
-        
-    <div id="redColorCode">rgb = (255, 0, 0)</div>
-    <div id="greenColorCode">rgb = (0, 255, 0)</div>
-    <div id="blueColorCode">rgb = (0, 0, 255)</div>
 <div class="divider-3"></div>
 <div class="border-top mt-5 mb-3"></div>
 </div>

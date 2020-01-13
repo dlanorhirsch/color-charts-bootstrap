@@ -1,47 +1,33 @@
 
 
 //------------- circle1 ----------------- //
-var circle1 = document.createElement('div');
-circle1.className = "hide1";
-document.getElementById('cm1');
-cm1.addEventListener("click", function(){
-    if(circle1.className === "hide1") {
-        circle1.className = "";
-    } else  {
-        circle1.className = "hide1";
-    }
-});
-
-document.getElementById("container");
-container.appendChild(circle1);
-
+function hideFunction1() {
+  var circle = document.getElementById(
+  "hide1");
+    if(circle.style.display === "none") {
+    circle.style.display = "inline-block";
+  } else {
+    circle.style.display = "none";
+  }
+}
 //------------- circle2 ------------------
-var circle2 = document.createElement('div');
-circle2.className = "hide2";
-document.getElementById('cm2');
-cm2.addEventListener("click", function(){
-    if(circle2.className === "hide2") {
-        circle2.className = "";
-    } else {
-        circle2.className = "hide2";
-    }
-});
-document.getElementById("container");
-container.appendChild(circle2);
-
+function hideFunction2() {
+  var circle2 = document.getElementById("hide2");
+    if(circle2.style.display === "none") {
+    circle2.style.display = "inline-block";
+  } else {
+    circle2.style.display = "none";
+  }
+}
 //------------  circle3 -------------------
-var circle3 = document.createElement('div');
-circle3.className = "hide3";
-document.getElementById('cm3');
-cm3.addEventListener("click", function(){
-    if(circle3.className === "hide3") {
-        circle3.className = "";
-    } else  {
-        circle3.className = "hide3";
-    }
-});
-document.getElementById("container");
-container.appendChild(circle3);
+function hideFunction3() {
+  var circle3 = document.getElementById("hide3");
+    if(circle3.style.display === "none") {
+    circle3.style.display = "inline-block";
+  } else {
+    circle3.style.display = "none";
+  }
+}
 
 // --- chip4 (Random Color Pad)  ---
 // -----------------------------------------------------------------
@@ -96,29 +82,29 @@ pad.addEventListener("mousemove", block);
   // handleEvent property set to a function, to handle the event
 
 //--- chip 1 ---
-var chip1 = document.createElement('div');
-chip1.setAttribute("id", "chip1");
-var textCont1 = document.createTextNode("RED");
-chip1.appendChild(textCont1);
-document.getElementById('container3');
-container3.appendChild(chip1);
+// var chip1 = document.createElement('div');
+// chip1.setAttribute("id", "chip1");
+// var textCont1 = document.createTextNode("RED");
+// chip1.appendChild(textCont1);
+// document.getElementById('container3');
+// container3.appendChild(chip1);
 
 
-//--- chip 2 ---
-var chip2 = document.createElement('div');
-chip2.setAttribute("id", "chip2");
-var textCont2 = document.createTextNode("GREEN");
-chip2.appendChild(textCont2);
-document.getElementById('container3');
-container3.appendChild(chip2);
+// //--- chip 2 ---
+// var chip2 = document.createElement('div');
+// chip2.setAttribute("id", "chip2");
+// var textCont2 = document.createTextNode("GREEN");
+// chip2.appendChild(textCont2);
+// document.getElementById('container3');
+// container3.appendChild(chip2);
 
-//--- chip 3 ---
-var chip3 = document.createElement('div');
-chip3.setAttribute("id", "chip3");
-var textCont3 = document.createTextNode("BLUE");
-chip3.appendChild(textCont3);
-document.getElementById("container3");
-container3.appendChild(chip3);
+// //--- chip 3 ---
+// var chip3 = document.createElement('div');
+// chip3.setAttribute("id", "chip3");
+// var textCont3 = document.createTextNode("BLUE");
+// chip3.appendChild(textCont3);
+// document.getElementById("container3");
+// container3.appendChild(chip3);
 
 
 
