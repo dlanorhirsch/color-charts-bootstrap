@@ -29,8 +29,14 @@ function hideFunction3() {
   }
 }
 
+function hide(id="notset") {
+  console.log(id);
+  var el = document.getElementById(id);
+  el.style.visibility="hidden";
+}
+
 // --- chip4 (Random Color Pad)  ---
-// -----------------------------------------------------------------
+// ------------------------------------------
 
 const btn = document.getElementById("rndColorbtn");
 
@@ -44,8 +50,7 @@ function bgChange(e) {
 }
 btn.addEventListener('click', bgChange);
 
-
-// ------------------------------------------------------------------
+// --------------------------------------------
 var chip4 = document.createElement("div");
 chip4.setAttribute("id", "chip4");
 var textCont4 = document.createTextNode("Box 4");
@@ -56,7 +61,7 @@ container2.appendChild(chip4);
 //--- random color selector ---
 
 mouseToColor = function (e){
-  // console.log("this is:", this.constructor);
+// console.log("this is:", this.constructor);
   
   axisX = Math.ceil((e.offsetX/e.target.clientWidth) * 255);
   axisY = Math.ceil((e.offsetY/e.target.clientHeight) * 255);
@@ -105,6 +110,8 @@ pad.addEventListener("mousemove", block);
 // chip3.appendChild(textCont3);
 // document.getElementById("container3");
 // container3.appendChild(chip3);
+
+
 
 
 

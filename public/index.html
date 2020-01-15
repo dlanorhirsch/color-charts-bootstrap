@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DOM Practice</title>
-  <link rel="stylesheet" type=text/css href="stylesheet_for_js-elements.css">
+  <!-- <link rel="stylesheet" type=text/css href="stylesheet_for_js-elements.css"> -->
   <!-- <link rel="stylesheet" type=text/css href="stylesheet2.css"> -->
-  <!-- MIKE: I created a new stylesheet about and commented out the css for .hide1.  It no longer appears on the page.  Unless you see somehting else wrong, using an external stylesheet along with bootstrap doesn't seem to work.  This would seem indicate that the css must stay in the html file.  .hide2 and .hide3 are both appearing on the page. -->
 <style>
 
 /* RGB CSS */
@@ -184,13 +183,13 @@
     </p>
 
     <div class="col-8 offset-4" id="hide1"></div>
-    <button id="btn1" onclick="hideFunction1()" >Click Me</button>
+    <button id="btn1" onclick="hide('hide1')" >Click Me</button>
     
     <div class="col-8" id="hide2"></div>
-    <button id="btn1" onclick="hideFunction2()">Click Me</button>
+    <button id="btn2" onclick="hide('hide2')">Click Me</button>
 
-    <div class="col-8" id="hide3"></div>
-    <button id="btn1" onclick="hideFunction3()">Click Me</button>
+    <div class="col-8" id="hide3" ></div>
+    <button id="btn3" onclick="hideFunction3()">Click Me</button>
 
     <!-- <div class="col-2 offest-4 d-flex" id="cm1">Click Me</div> -->
     <!-- <div class="col-2 offest-4 d-flex" id="cm2">Click Me</div>
@@ -236,12 +235,14 @@
   <h3 class="col mt-5 mb-3">Random Color Selectors</h3>
   <p>This section uses Dom manipulation to create elements and random color selectors with standard JavaScript.</p>
 
-  <div id="mousePad"></div> 
-  <div id="mouse-pad_text">(Hover over the box.)</div>
+  <div id="mousePad" class="col"></div> 
+  <div id="mouse-pad_text" class="col-8 offest-4">(Hover over the box.)</div>
+  
 
   <button class="col-3 offset-4" id="rndColorbtn">Click Me</button>
-  <div class="rndColor_Box"></div>
+</div>
   <div class="border-top mt-5 mb-3"></div>
+
 </div>
 <!-- ----------------------RGB---------------------------- -->
  <div id="container3" class="container">
@@ -259,15 +260,19 @@
       <br>
       RGB is a device-dependent color model: different devices detect or reproduce a given RGB value differently, since the color elements (such as phosphors or dyes) and their response to the individual R, G, and B levels vary from manufacturer to manufacturer, or even in the same device over time. Thus an RGB value does not define the same color across devices without some kind of color management. 
     </p>
-<div class="col-8 offset-4 d-flex" id="chip1">RED</div>
-<div class="col-8 offset-4" id="redColorCode">rgb = (255, 0, 0)</div>
-<div class="col-9 offset-3 d-flex"id="chip2">GREEN</div>
-<div id="greenColorCode">rgb = (0, 255, 0)</div>
-<div id="chip3">BLUE</div>
-<div id="blueColorCode">rgb = (0, 0, 255)</div>
+    
+  <div class="d-flex">    
+    <div class="col" id="chip1">RED</div>
+    <div class="col" id="redColorCode">rgb = (255, 0, 0)</div>
 
-<div class="divider-3"></div>
-<div class="border-top mt-5 mb-3"></div>
+    <div class="col"id="chip2">GREEN</div>
+    <div id="greenColorCode">rgb = (0, 255, 0)</div>
+
+    <div id="chip3">BLUE</div>
+    <div id="blueColorCode">rgb = (0, 0, 255)</div>
+  </div>
+
+  <div class="border-top mt-5 mb-3"></div>
 </div>
 <!-- -----------  HSB -------------------------- -->
 <div id="container4" class="container">
@@ -277,15 +282,20 @@
     <img src="hsb.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="hsb-image">
 
     <p class="col-8 offset-4">HSL (hue, saturation, lightness) and HSV (hue, saturation, value) are alternative representations of the RGB color model, designed in the 1970s by computer graphics researchers to more closely align with the way human vision perceives color-making attributes. In these models, colors of each hue are arranged in a radial slice, around a central axis of neutral colors which ranges from black at the bottom to white at the top. The HSV representation models the way paints of different colors mix together, with the saturation dimension resembling various tints of brightly colored paint, and the value dimension resembling the mixture of those paints with varying amounts of black or white paint. The HSL model attempts to resemble more perceptual color models such as the Natural Color System (NCS) or Munsell color system, placing fully saturated colors around a circle at a lightness value of ​1⁄2, where a lightness value of 0 or 1 is fully black or white, respectively. </p>
-
-    <div id="hsbCirc1"></div>
-    <div id="hsbCodeRed">RED:  H: 0°, S: 100%, B: 100%</div>
-
-    <div id="hsbCirc2"></div>
-    <div id="hsbCodeGreen">GREEN:  H: 120°, S: 100%, B: 100%</div>
-
-    <div id="hsbCirc3"></div>
-    <div id="hsbCodeBlue">BLUE:  H: 240°, S: 100%, B: 100%</div>
+  <div class="d-flex">
+    <div>
+      <div id="hsbCirc1"></div>
+      <div id="hsbCodeRed">RED:  H: 0°, S: 100%, B: 100%</div>
+    </div>
+    <div>
+      <div id="hsbCirc2"></div>
+      <div id="hsbCodeGreen">GREEN:  H: 120°, S: 100%, B: 100%</div>
+    </div>
+    <div>
+      <div id="hsbCirc3"></div>
+      <div id="hsbCodeBlue">BLUE:  H: 240°, S: 100%, B: 100%</div>
+    </div>
+  </div>
     <div class="border-top mt-5 mb-3 col-10"></div>
 </div>
 <!-- -------------  HEX ------------------------ -->
@@ -301,17 +311,20 @@
 <br>
 <br>
     The first versions of Mosaic and Netscape Navigator used the X11 color names as the basis for their color lists, as both started as X Window System applications. Web colors have an unambiguous colorimetric definition, sRGB, which relates the chromaticities of a particular phosphor set, a given transfer curve, adaptive whitepoint, and viewing conditions.[4] These have been chosen to be similar to many real-world monitors and viewing conditions, in order to allow rendering to be fairly close to the specified values even without color management. User agents vary in the fidelity with which they represent the specified colors. More advanced user agents use color management to provide better color fidelity; this is particularly important for Web-to-print applications. </p>
-
-    <div id="hexCirc1"></div>
-    <div id="hsbCodeRed">RED  Hex: #FF0000</div>
-
-    <div id="hexCirc2"></div>
-    <div id="hsbCodeGreen">GREEN  Hex: #00FF00</div>
-
-    <div id="hexCirc3"></div>
-    <div id="hsbCodeBlue">BLUE  Hex: #0000FF</div>
-
-
+    <div class="d-flex">
+      <div>
+        <div id="hexCirc1"></div>
+        <div id="hsbCodeRed">RED  Hex: #FF0000</div>
+     </div>
+     <div>
+        <div id="hexCirc2"></div>
+        <div id="hsbCodeGreen">GREEN  Hex: #00FF00</div>
+     </div>
+     <div>
+       <div id="hexCirc3"></div>
+        <div id="hsbCodeBlue">BLUE  Hex: #0000FF</div>
+      </div>
+    </div>
     <div class="border-top mt-5 mb-3 col-10"></div>
 </div>
 <!-- ------------- MUNS  ------------------------ -->
