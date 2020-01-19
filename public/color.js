@@ -1,42 +1,46 @@
-
-
 //------------- circle1 ----------------- //
-function hideFunction1() {
-  var circle = document.getElementById(
-  "hide1");
-    if(circle.style.display === "none") {
-    circle.style.display = "inline-block";
-  } else {
-    circle.style.display = "none";
+var button = document.getElementById("btn1");
+var circ1 = document.getElementById("circle1");
+
+btn1.addEventListener("click", function(){
+  function hide(){
+    if(circle1.style.visibility === "visible") {
+      circle1.style.visibility = "hidden";
+    } else {
+      circle1.style.visibility = "visible";
   }
 }
+hide();
+});
 //------------- circle2 ------------------
-function hideFunction2() {
-  var circle2 = document.getElementById("hide2");
-    if(circle2.style.display === "none") {
-    circle2.style.display = "inline-block";
+var circ2 = document.getElementById("circle2");
+btn2.addEventListener("click", function(){
+  function changeColor(){
+    if(circ2.style.backgroundColor === "green") {
+    circ2.style.backgroundColor = "purple";
   } else {
-    circle2.style.display = "none";
+    circ2.style.backgroundColor = "green";
   }
 }
+changeColor();
+});
 //------------  circle3 -------------------
-function hideFunction3() {
-  var circle3 = document.getElementById("hide3");
-    if(circle3.style.display === "none") {
-    circle3.style.display = "inline-block";
-  } else {
-    circle3.style.display = "none";
-  }
+var theCircle = document.querySelector("#circle3");
+var box = document.querySelector("#contentContainer");
+
+box.addEventListener("click", getClickPosition, false );
+
+function getClickPosition(e) {
+  var xPosition = e.clientX - (theCircle.offsetWidth / 2);
+  var yPosition = e.clientY - (theCircle.offsetHeight / 2);
+
+  // offsetWidth / 2 re-positions the circle from its center rather than its edge
+
+  var translate3dValue = "translate3d(" + xPosition + "px," + yPosition + "px,  0)";
+  theCircle.style.transform = translate3dValue;
 }
 
-function hide(id="notset") {
-  console.log(id);
-  var el = document.getElementById(id);
-  el.style.visibility="hidden";
-}
-
-// --- chip4 (Random Color Pad)  ---
-// ------------------------------------------
+// --- box4 (Random Color Pad)  --- //
 
 const btn = document.getElementById("rndColorbtn");
 
@@ -50,14 +54,6 @@ function bgChange(e) {
 }
 btn.addEventListener('click', bgChange);
 
-// --------------------------------------------
-var chip4 = document.createElement("div");
-chip4.setAttribute("id", "chip4");
-var textCont4 = document.createTextNode("Box 4");
-chip4.appendChild(textCont4);
-document.getElementById("container2");
-container2.appendChild(chip4);
-
 //--- random color selector ---
 
 mouseToColor = function (e){
@@ -69,8 +65,6 @@ mouseToColor = function (e){
   if(e.ctrlKey){
     axisZ = Math.ceil((e.offsetY/e.target.clientHeight) * 255);
   } 
-
-  
   console.log(axisX, axisY, axisZ);
   
   this.innerText = (axisX, axisY, axisZ);
@@ -78,40 +72,12 @@ mouseToColor = function (e){
   // console.log(`rgb(${e.clientX}, ${e.clientY},255)`);
 };
 
-
-block = document.getElementById("chip4");
+block = document.getElementById("box4");
 block.handleEvent = mouseToColor;
 pad = document.getElementById("mousePad");
 pad.addEventListener("mousemove", block);
 // addEventListener takes an event name and a function or an object with an 
   // handleEvent property set to a function, to handle the event
-
-//--- chip 1 ---
-// var chip1 = document.createElement('div');
-// chip1.setAttribute("id", "chip1");
-// var textCont1 = document.createTextNode("RED");
-// chip1.appendChild(textCont1);
-// document.getElementById('container3');
-// container3.appendChild(chip1);
-
-
-// //--- chip 2 ---
-// var chip2 = document.createElement('div');
-// chip2.setAttribute("id", "chip2");
-// var textCont2 = document.createTextNode("GREEN");
-// chip2.appendChild(textCont2);
-// document.getElementById('container3');
-// container3.appendChild(chip2);
-
-// //--- chip 3 ---
-// var chip3 = document.createElement('div');
-// chip3.setAttribute("id", "chip3");
-// var textCont3 = document.createTextNode("BLUE");
-// chip3.appendChild(textCont3);
-// document.getElementById("container3");
-// container3.appendChild(chip3);
-
-
 
 
 
