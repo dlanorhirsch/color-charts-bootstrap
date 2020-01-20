@@ -16,33 +16,60 @@ hide();
 var circ2 = document.getElementById("circle2");
 btn2.addEventListener("click", function(){
   function changeColor(){
-    if(circ2.style.backgroundColor === "green") {
+    if(circ2.style.backgroundColor === "yellow") {
     circ2.style.backgroundColor = "purple";
   } else {
-    circ2.style.backgroundColor = "green";
+    circ2.style.backgroundColor = "yellow";
   }
 }
 changeColor();
 });
 //------------  circle3 -------------------
+
 var theCircle = document.querySelector("#circle3");
 var box = document.querySelector("#contentContainer");
 
 box.addEventListener("click", getClickPosition, false );
 
-function getClickPosition(e) {
-  var xPosition = e.clientX - (theCircle.offsetWidth / 2);
-  var yPosition = e.clientY - (theCircle.offsetHeight / 2);
+function getClickPosition(element) {
+  var parentPosition = getPosition(box);
+  var xPosition = element.clientX - (theCircle.offsetWidth / 2);
+  var yPosition = element.clientY - (theCircle.offsetHeight / 2);
 
   // offsetWidth / 2 re-positions the circle from its center rather than its edge
 
   var translate3dValue = "translate3d(" + xPosition + "px," + yPosition + "px,  0)";
   theCircle.style.transform = translate3dValue;
+
 }
+function getPosition(element) {
+  var xPosition = 0;
+  var yPosition = 0;
+ 
+  while (element) {
+    if (element.tagName == "BODY") {
+      // deal with browser quirks with body/window/document and page scroll
+      var xScrollPos = element.scrollLeft || document.documentElement.scrollLeft;
+      var yScrollPos = element.scrollTop || document.documentElement.scrollTop;
+ 
+      xPosition += (element.offsetLeft - xScrollPos + element.clientLeft);
+      yPosition += (element.offsetTop - yScrollPos + element.clientTop);
+    }
+     element = element.offsetParent;
+  }
+  return {
+    x: xPosition,
+    y: yPosition
+  };
+}
+
+
+
+
 
 // --- box4 (Random Color Pad)  --- //
 
-const btn = document.getElementById("rndColorbtn");
+const btn = document.getElementById("rndColorSq");
 
 function random(number) {
   return Math.floor(Math.random() * (number + 1));
