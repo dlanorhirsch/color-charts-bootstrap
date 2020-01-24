@@ -29,38 +29,20 @@ changeColor();
 var theCircle = document.querySelector("#circle3");
 var box = document.querySelector("#contentContainer");
 
-box.addEventListener("click", getClickPosition, false );
+box.addEventListener("click", handleBoxClick, false );
 
-function getClickPosition(element) {
-  var parentPosition = getPosition(box);
-  var xPosition = element.clientX - (theCircle.offsetWidth / 2);
-  var yPosition = element.clientY - (theCircle.offsetHeight / 2);
+function handleBoxClick(element) {
+  
+  xPosition = element.offsetX - (theCircle.offsetWidth / 2);
+  yPosition = element.offsetY - (theCircle.offsetHeight /2);
 
-  // offsetWidth / 2 re-positions the circle from its center rather than its edge
+    // offsetWidth / 2 re-positions the circle from its center rather than its edge
 
-  var translate3dValue = "translate3d(" + xPosition + "px," + yPosition + "px,  0)";
+  var translate3dValue = `translate3d( ${xPosition}px, ${yPosition}px, 0)`;
+
+  // var translate3dValue = "translate3d(" + xPosition + "px," + yPosition + "px,  0)";
   theCircle.style.transform = translate3dValue;
 
-}
-function getPosition(element) {
-  var xPosition = 0;
-  var yPosition = 0;
- 
-  while (element) {
-    if (element.tagName == "BODY") {
-      // deal with browser quirks with body/window/document and page scroll
-      var xScrollPos = element.scrollLeft || document.documentElement.scrollLeft;
-      var yScrollPos = element.scrollTop || document.documentElement.scrollTop;
- 
-      xPosition += (element.offsetLeft - xScrollPos + element.clientLeft);
-      yPosition += (element.offsetTop - yScrollPos + element.clientTop);
-    }
-     element = element.offsetParent;
-  }
-  return {
-    x: xPosition,
-    y: yPosition
-  };
 }
 
 
@@ -105,8 +87,6 @@ pad = document.getElementById("mousePad");
 pad.addEventListener("mousemove", block);
 // addEventListener takes an event name and a function or an object with an 
   // handleEvent property set to a function, to handle the event
-
-
 
 
 

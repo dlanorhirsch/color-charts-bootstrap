@@ -25,13 +25,26 @@
   padding: 0px;
 }
 /* Event Listeners CSS */
-#circle3 {
-  width: 75px;
-  height: 75px;
+.circle {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  background: blue;
-  transform: translate3d(50px, 50px, 0);
-  transition: transform .3s cubic-bezier(.64,.31,.5,.93);
+  margin: 40px 0 30px 50px;
+}
+#circle1 {
+  background: red;
+  border: 1px solid black;
+}
+#circle2 {
+  background: yellow;
+  border: 1px solid black; 
+}
+#btn1, #btn2 {
+  width: 100px;
+  height: 40px;
+  border-color: 1px black solid;
+  margin-left: 50px;
+  border-radius: 5px;
 }
 #contentContainer {
   display: inline-block;
@@ -41,52 +54,49 @@
   background: rgb(152, 243, 159);
   overflow: hidden;
   cursor: pointer;
- 
-}
-.circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 40px 0 30px 100px;
-}
-#circle1 {
-  background: red;
-}
-#circle2 {
-  background: yellow;
-}
-#btn1, #btn2 {
-  width: 100px;
-  height: 40px;
-  border-color: 1px black solid;
   margin-left: 100px;
-  border-radius: 5px;
+  margin-top: 50px;
 }
-/* RGB CSS */
-#circles1 {
-  margin-bottom: 100px;
-
+#circle3 {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: blue;
+  transform: translate3d(50px, 50px, 0);
+  transition: transform .3s cubic-bezier(.64,.31,.5,.93);
 }
+/* Random Color Selectors*/
 #rndColorSq {
   border: 1px solid black;
 }
-#chip1 {
+
+/* RGB CSS */
+#rgb-para {
+  margin-bottom: 50px;
+}
+#rgbChip1 {
   width: 150px;
   height: 150px;
   background-color: #ff0000;
   border: 2px solid black;
+
 }
-#chip2 {
+#rgbChip2 {
   width: 150px;
   height: 150px;
   background-color:#00ff00;
   border: 2px black solid;
+
 }
-#chip3 {
+#rgbChip3 {
   width: 150px;
   height: 150px;
   background-color: #0000ff;
   border: 2px black solid;
+
+}
+.colorCode {
+  margin-left: 50px;
 }
 /* HSB CSS */
 #hsbCirc1 {
@@ -95,6 +105,7 @@
   border-radius: 50%;
   background: #f00;
   border: 1px solid black; 
+
 }
 #hsbCirc2 {
   width: 150px;
@@ -102,6 +113,7 @@
   border-radius: 50%;
   background: #0f0;
   border: 1px solid black;
+
 }
 #hsbCirc3 {
   width: 150px;
@@ -109,7 +121,9 @@
   border-radius: 50%;
   background: #00f;
   border: 1px solid black;
+
 }
+
 /* HEX CSS */
 #hexCirc1 {
   width: 150px;
@@ -235,7 +249,9 @@
 <div id="container" class="container">
   <h3 class="col mt-3 mb-3">Dynamic Elements Created w/Event Listeners</h3>
 <p>The section demonstrates the use of event listeners to dynamically change CSS stylized div elements.  Examples of hideing and element, changing an elements color, and changing an elements position are shown. </p>
-  <div  id="circles1" class="col-6 offset-4 d-flex">
+  
+<div class="container col-md-10 d-flex col-sm-1">
+  <div  id="circles1" class="">
     <div>
       <div class="circle" id="circle1"></div>
       <button id="btn1">Click Me</button>
@@ -244,25 +260,30 @@
       <div class="circle" id="circle2"></div>
       <button id="btn2">Click Me</button>
     </div>
-  </div>
-
-  <div id="contentContainer" class="col-6 offset-4 ">
-    <div id='circle3'></div>
+    </div>
+      <div id="contentContainer" class="col ">
+      <div id='circle3'></div>
+    </div>
   </div>
 </div>
+
 <div class="divLine"></div>
 
 <!-- -------------RANDOM COLOR SELECTORS--------------- -->
 
 <div id="container2" class="container">
-  <h3 class="col-12 mt-3 mb-3">Random Color Selectors</h3>
-  <p class="col-8">This section uses Dom manipulation to create elements and random color selectors with standard JavaScript.</p>
-  <div class="container d-flex">
-    <div id="mousePad" class=""></div> 
-    <div id="mouse-pad_text" class="">(Hover over the box.)</div>
-    <div id="box4" class=""></div>
+  <h3 class="col-md-12 col-sm-2 mt-3 mb-3">Random Color Selectors</h3>
+  <p class="col-md-12 col-sm-2 mb-5">This section uses Dom manipulation to create elements and random color selectors with standard JavaScript.</p>
+  
+  <div class="container d-flex col-md-8  col-sm-2">
+    <div>
+      <div id="mousePad" class="col"></div> 
+      <caption id="mouse-pad_text" class="">(Hover over the box.)</caption>
+    </div>
+    
+    <div id="box4" class="col offset-1"></div>
 
-    <button class="col-4 offset-1" id="rndColorSq">Click Me</button>
+    <button class="col-3 offset-2" id="rndColorSq">Click Me</button>
   </div>
   <div class="divLine"></div>
 </div>
@@ -271,11 +292,11 @@
 <!-- ----------------------RGB---------------------------- -->
  <div id="container3" class="container">
      
-  <h3 class="col mt-3 mb-3">Color Paradigm: RBG</h3>
+  <h3 class="col-md-12 mt-3 mb-3">Color Paradigm: RBG</h3>
   
    <img src="rgb.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="tri-color circles">
 
-    <p class="col-8 offset-4">
+    <p id="rgb-para" class="col-md-12 col-sm-3">
       The RGB color model is an additive color model[1] in which red, green, and blue light are added together in various ways to reproduce a broad array of colors. The name of the model comes from the initials of the three additive primary colors, red, green, and blue.
       <br>
       <br>
@@ -284,20 +305,22 @@
       <br>
       RGB is a device-dependent color model: different devices detect or reproduce a given RGB value differently, since the color elements (such as phosphors or dyes) and their response to the individual R, G, and B levels vary from manufacturer to manufacturer, or even in the same device over time. Thus an RGB value does not define the same color across devices without some kind of color management. 
     </p>
-    
-  <div class="d-flex">    
-    <div class="col" id="chip1">RED</div>
-    <div class="col" id="redColorCode">rgb = (255, 0, 0)</div>
-
-    <div class="col"id="chip2">GREEN</div>
-    <div id="greenColorCode">rgb = (0, 255, 0)</div>
-
-    <div id="chip3">BLUE</div>
-    <div id="blueColorCode">rgb = (0, 0, 255)</div>
-  </div>
-
-  <div class="border-top mt-5 mb-3"></div>
 </div>
+  <div class="d-flex">
+    <div d-flex>
+      <div id="rgbChip1"></div>
+      <div class="colorCode">RED: rgb=(255, 0, 0)</div>
+    </div>
+    <div>
+      <div id="rgbChip2"></div>
+      <div class="colorCode">GREEN: rgb=(0, 255, 0)</div>
+    </div>
+    <div>
+      <div id="rgbChip3">BLUE</div>
+      <div class="colorCode"> BLUE: rgb=(0, 0, 255)</div>
+    </div>
+    </div>
+  <div class="divLine"></div>
 <!-- -----------  HSB -------------------------- -->
 <div id="container4" class="container">
 
@@ -305,18 +328,18 @@
 
     <img src="hsb.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="hsb-image">
 
-    <p class="col-8 offset-4">HSL (hue, saturation, lightness) and HSV (hue, saturation, value) are alternative representations of the RGB color model, designed in the 1970s by computer graphics researchers to more closely align with the way human vision perceives color-making attributes. In these models, colors of each hue are arranged in a radial slice, around a central axis of neutral colors which ranges from black at the bottom to white at the top. The HSV representation models the way paints of different colors mix together, with the saturation dimension resembling various tints of brightly colored paint, and the value dimension resembling the mixture of those paints with varying amounts of black or white paint. The HSL model attempts to resemble more perceptual color models such as the Natural Color System (NCS) or Munsell color system, placing fully saturated colors around a circle at a lightness value of ​1⁄2, where a lightness value of 0 or 1 is fully black or white, respectively. </p>
+    <p class="col-md-12 col-sm-3">HSL (hue, saturation, lightness) and HSV (hue, saturation, value) are alternative representations of the RGB color model, designed in the 1970s by computer graphics researchers to more closely align with the way human vision perceives color-making attributes. In these models, colors of each hue are arranged in a radial slice, around a central axis of neutral colors which ranges from black at the bottom to white at the top. The HSV representation models the way paints of different colors mix together, with the saturation dimension resembling various tints of brightly colored paint, and the value dimension resembling the mixture of those paints with varying amounts of black or white paint. The HSL model attempts to resemble more perceptual color models such as the Natural Color System (NCS) or Munsell color system, placing fully saturated colors around a circle at a lightness value of ​1⁄2, where a lightness value of 0 or 1 is fully black or white, respectively. </p>
   <div class="d-flex">
     <div>
-      <div id="hsbCirc1"></div>
+      <div id="hsbCirc1" class=""></div>
       <div id="hsbCodeRed">RED:  H: 0°, S: 100%, B: 100%</div>
     </div>
     <div>
-      <div id="hsbCirc2"></div>
+      <div id="hsbCirc2" class=""></div>
       <div id="hsbCodeGreen">GREEN:  H: 120°, S: 100%, B: 100%</div>
     </div>
     <div>
-      <div id="hsbCirc3"></div>
+      <div id="hsbCirc3" class=""></div>
       <div id="hsbCodeBlue">BLUE:  H: 240°, S: 100%, B: 100%</div>
     </div>
   </div>
@@ -328,7 +351,7 @@
 
   <img src="hex.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="hsb-image">
 
-  <p class="col-8 offset-4">Web colors are colors used in displaying web pages on the World Wide Web, and the methods for describing and specifying those colors. Colors may be specified as an RGB triplet or in hexadecimal format (a hex triplet) or according to their common English names in some cases. A color tool or other graphics software is often used to generate color values. In some uses, hexadecimal color codes are specified with notation using a leading number sign (#).[1][2] A color is specified according to the intensity of its red, green and blue components, each represented by eight bits. Thus, there are 24 bits used to specify a web color within the sRGB gamut, and 16,777,216 colors that may be so specified.
+  <p class="col-md-12 col-sm-3">Web colors are colors used in displaying web pages on the World Wide Web, and the methods for describing and specifying those colors. Colors may be specified as an RGB triplet or in hexadecimal format (a hex triplet) or according to their common English names in some cases. A color tool or other graphics software is often used to generate color values. In some uses, hexadecimal color codes are specified with notation using a leading number sign (#).[1][2] A color is specified according to the intensity of its red, green and blue components, each represented by eight bits. Thus, there are 24 bits used to specify a web color within the sRGB gamut, and 16,777,216 colors that may be so specified.
     <br>
     <br>
     Colors outside the sRGB gamut can be specified in Cascading Style Sheets by making one or more of the red, green and blue components negative or greater than 100%, so the color space is theoretically an unbounded extrapolation of sRGB similar to scRGB.[3] Specifying a non-sRGB color this way requires the RGB() function call; it is impossible with the hexadecimal syntax (and thus impossible in legacy HTML documents that do not use CSS).
@@ -349,7 +372,7 @@
         <div id="hsbCodeBlue">BLUE  Hex: #0000FF</div>
       </div>
     </div>
-    <div class="border-top mt-5 mb-3 col-10"></div>
+  <div id="cont1"></div>
 </div>
 <!-- ------------- MUNS  ------------------------ -->
  <div id="container6" class="container">
@@ -359,7 +382,7 @@
     
 <img src="Munsell_1943.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="mun_model2">
 
-  <p class="col-8 offset-4">In colorimetry, the Munsell color system is a color space that specifies colors based on three properties of color: hue, value (lightness), and chroma (color purity). It was created by Professor Albert H. Munsell in the first decade of the 20th century and adopted by the United States Department of Agriculture (USDA) as the official color system for soil research in the 1930s.
+  <p class="col-md-12 col-sm-3">In colorimetry, the Munsell color system is a color space that specifies colors based on three properties of color: hue, value (lightness), and chroma (color purity). It was created by Professor Albert H. Munsell in the first decade of the 20th century and adopted by the United States Department of Agriculture (USDA) as the official color system for soil research in the 1930s.
     <br>
     <br>
   Several earlier color order systems had placed colors into athree-dimensional color solid of one form or another, but Munsell was thefirst to separate hue, value, and chroma into perceptually uniform andindependent dimensions, and he was the first to illustrate the colorssystematically in three-dimensional space.[1] Munsell's system,particularly the later renotations, is based on rigorous measurements ofhuman subjects' visual responses to color, putting it on a firmexperimental scientific basis. Because of this basis in human visualperception, Munsell's system has outlasted its contemporary color models,and though it has been superseded for some uses by models such as CIELAB(L*a*b*) and CIECAM02, it is still in wide use today.[2]
