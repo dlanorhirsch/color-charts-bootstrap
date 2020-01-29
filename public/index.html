@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>DOM Practice</title>
   
-  <!-- <link rel="stylesheet" type=text/css href="stylesheet_for_js-elements.css"> -->
-  <!-- <link rel="stylesheet" type=text/css href="stylesheet2.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+<title>DOM Practice</title>
 
 <style>
 .divLine {
@@ -24,7 +24,24 @@
   margin: 0px;
   padding: 0px;
 }
-/* Event Listeners CSS */
+/* Dynamic Elements Created w/EL */
+#rndColorbtn {
+  width: 200px;
+  height: 200px;
+  border-radius: 1px;
+}
+#mousePad {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+#box4 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  border: 2px black solid;
+}
+/* Event Listeners CSS -------------------*/
 .circle {
   width: 100px;
   height: 100px;
@@ -65,152 +82,131 @@
   transform: translate3d(50px, 50px, 0);
   transition: transform .3s cubic-bezier(.64,.31,.5,.93);
 }
-/* Random Color Selectors*/
+/* Random Color Selectors----------------*/
 #rndColorSq {
   border: 1px solid black;
 }
 
-/* RGB CSS */
-#rgb-para {
-  margin-bottom: 50px;
+/* RGB CSS ------------------------------*/
+#chips {
+  justify-content: center;
+}
+#rgbChip1, #rgbChip2, #rgbChip3 {
+  min-width: 150px;
+  max-width: 150px;
+  height: 150px;
+  border: 2px black solid;
+  margin: 5px 20px 5px 20px;
 }
 #rgbChip1 {
-  width: 150px;
-  height: 150px;
   background-color: #ff0000;
-  border: 2px solid black;
-
 }
 #rgbChip2 {
-  width: 150px;
-  height: 150px;
   background-color:#00ff00;
-  border: 2px black solid;
-
 }
 #rgbChip3 {
-  width: 150px;
-  height: 150px;
   background-color: #0000ff;
-  border: 2px black solid;
-
 }
 .colorCode {
-  margin-left: 50px;
+  margin-left: 20px;
+  font-size: .5rem;
 }
-/* HSB CSS */
-#hsbCirc1 {
+/* HSB CSS -------------------------*/
+
+#hsbCircles {
+  justify-content: center;
+}
+#hsbCirc1, #hsbCirc2, #hsbCirc3 {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: #f00;
   border: 1px solid black; 
-
+  margin: 5px 20px 5px 20px;
 }
+#hsbCirc1 {
+  background: #f00;
+  }
 #hsbCirc2 {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
   background: #0f0;
-  border: 1px solid black;
-
 }
 #hsbCirc3 {
+  background: #00f;
+}
+#hsbCodeRed, #hsbCodeGreen, #hsbCodeBlue {
+  font-size: .5rem;
+}
+
+/* HEX CSS ----------------------------*/
+#hexCircles {
+  justify-content: center;
+  align-items: center;
+}
+#hexCirc1, #hexCirc2, #hexCirc3 {
+  margin: 5px 20px 5px 20px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: #00f;
   border: 1px solid black;
-
 }
-
-/* HEX CSS */
 #hexCirc1 {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
   background: #f00;
-  border: 1px solid black;
-}
+ }
 #hexCirc2 {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
   background: #0f0;
-  border: 1px solid black;
-}
+ }
 #hexCirc3 {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
   background: #00f;
-  border: 1px solid black;
 }
-#rndColorbtn {
-  width: 200px;
-  height: 200px;
-  border-radius: 1px;
-}
-#mousePad {
-  width: 150px;
-  height: 150px;
-  border: 1px solid black;
-}
-#box4 {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
-  border: 2px black solid;
-}
+
 </style>
 
 </head> 
 <body>
 <!-- -------------------NAVBAR--------------------- -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
   <div class="container">  
-    <a href="#" class="navbar-brand">Navbar Fixed Top</a>
+    <a class="navbar-brand" href="#" >Navbar Fixed Top</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-
-    <ul class="navbar-nav">
-      <li class="nav_item">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav_item">
-        <a class="nav-link" href="#">RGB</a>
-      </li>
-      <li class="nav_item">
-        <a class="nav-link" href="#">HSB</a>
-      </li>
-      <li class="nav_item">
-        <a class="nav-link" href="#">HEX Codes</a>
-      </li>
-      <li class="nav_item">
-        <a class="nav-link" href="#">Munsell</a>
-      </li>
-      <li class="nav_item">
-        <a class="nav-link" href="#">Color Theory</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Color Spectrum</a>
-      </li>
-      <li class="nav_item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav_item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
-    </ul> 
-  </div>
+      <ul class="navbar-nav ml-auto" >
+        <li class="nav_item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav_item">
+          <a class="nav-link" href="#">RGB</a>
+        </li>
+        <li class="nav_item">
+          <a class="nav-link" href="#">HSB</a>
+        </li>
+        <li class="nav_item">
+          <a class="nav-link" href="#">HEX Codes</a>
+        </li>
+        <li class="nav_item">
+          <a class="nav-link" href="#">Munsell</a>
+        </li>
+        <li class="nav_item">
+          <a class="nav-link" href="#">Color Theory</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Color Spectrum</a>
+        </li>
+        <li class="nav_item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav_item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul> 
+    </div>
   </div>
 </nav>
 <!-- ---------------------MAIN HEADER----------------- -->
 <div class="container">
   <h1 class="col mt-5">COLOR CHARTS:</h1> 
-  <h2 class="col">Explorations in Color</h2>
+  <h2 class="col">Explorations in Color and Space</h2>
 </div>
 
 <!-- <div id="cont1">
@@ -313,13 +309,13 @@
 
 
 <!-- ----------------------RGB---------------------------- -->
- <div id="container3" class="container">
+<div id="container3" class="container">
      
-  <h3 class="col-md-12 mt-3 mb-3">Color Paradigm: RBG</h3>
+  <h3 class="col mt-3 mb-3">Color Paradigm: RBG</h3>
   
-   <img src="rgb.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="tri-color circles">
+  <img src="rgb.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="tri-color circles">
 
-    <p id="rgb-para" class="col-md-12 col-sm-3">
+    <p class="col-md-12 col-sm-3 mb-5">
       The RGB color model is an additive color model[1] in which red, green, and blue light are added together in various ways to reproduce a broad array of colors. The name of the model comes from the initials of the three additive primary colors, red, green, and blue.
       <br>
       <br>
@@ -328,9 +324,9 @@
       <br>
       RGB is a device-dependent color model: different devices detect or reproduce a given RGB value differently, since the color elements (such as phosphors or dyes) and their response to the individual R, G, and B levels vary from manufacturer to manufacturer, or even in the same device over time. Thus an RGB value does not define the same color across devices without some kind of color management. 
     </p>
-</div>
-  <div class="d-flex">
-    <div d-flex>
+
+  <div class="d-flex" id="chips">
+    <div>
       <div id="rgbChip1"></div>
       <div class="colorCode">RED: rgb=(255, 0, 0)</div>
     </div>
@@ -339,11 +335,13 @@
       <div class="colorCode">GREEN: rgb=(0, 255, 0)</div>
     </div>
     <div>
-      <div id="rgbChip3">BLUE</div>
+      <div id="rgbChip3"></div>
       <div class="colorCode"> BLUE: rgb=(0, 0, 255)</div>
     </div>
-    </div>
+  </div>
   <div class="divLine"></div>
+</div>
+
 <!-- -----------  HSB -------------------------- -->
 <div id="container4" class="container">
 
@@ -351,19 +349,20 @@
 
     <img src="hsb.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="hsb-image">
 
-    <p class="col-md-12 col-sm-3">HSL (hue, saturation, lightness) and HSV (hue, saturation, value) are alternative representations of the RGB color model, designed in the 1970s by computer graphics researchers to more closely align with the way human vision perceives color-making attributes. In these models, colors of each hue are arranged in a radial slice, around a central axis of neutral colors which ranges from black at the bottom to white at the top. The HSV representation models the way paints of different colors mix together, with the saturation dimension resembling various tints of brightly colored paint, and the value dimension resembling the mixture of those paints with varying amounts of black or white paint. The HSL model attempts to resemble more perceptual color models such as the Natural Color System (NCS) or Munsell color system, placing fully saturated colors around a circle at a lightness value of ​1⁄2, where a lightness value of 0 or 1 is fully black or white, respectively. </p>
-  <div class="d-flex">
+    <p class="col-md-12 col-sm-3 mb-5" id="hsbPara">HSL (hue, saturation, lightness) and HSV (hue, saturation, value) are alternative representations of the RGB color model, designed in the 1970s by computer graphics researchers to more closely align with the way human vision perceives color-making attributes. In these models, colors of each hue are  arranged in a radial slice, around a central axis of neutral colors  which ranges from black at the bottom to white at the top. The HSV representation models the way paints of different colors mix together, with the saturation dimension resembling various tints of brightly colored paint, and the value dimension resembling the mixture of  those paints with varying amounts of black or white paint. The HSL model attempts to resemble more perceptual color models such as the Natural Color System (NCS) or Munsell color system, placing fully saturated colors around a circle at a lightness value of ​1⁄2, where  a lightness value of 0 or 1 is fully black or white, respectively. 
+    </p>
+  <div class="d-flex" id="hsbCircles">
     <div>
-      <div id="hsbCirc1" class=""></div>
-      <div id="hsbCodeRed">RED:  H: 0°, S: 100%, B: 100%</div>
+      <div id="hsbCirc1"></div>
+      <div id="hsbCodeRed">RED: H: 0°, S: 100%, B: 100%</div>
     </div>
     <div>
-      <div id="hsbCirc2" class=""></div>
-      <div id="hsbCodeGreen">GREEN:  H: 120°, S: 100%, B: 100%</div>
+      <div id="hsbCirc2"></div>
+      <div id="hsbCodeGreen">GREEN: H: 120°, S: 100%, B: 100%</div>
     </div>
     <div>
-      <div id="hsbCirc3" class=""></div>
-      <div id="hsbCodeBlue">BLUE:  H: 240°, S: 100%, B: 100%</div>
+      <div id="hsbCirc3"></div>
+      <div id="hsbCodeBlue">BLUE: H: 240°, S: 100%, B: 100%</div>
     </div>
   </div>
   <div class="divLine"></div>
@@ -380,8 +379,9 @@
     Colors outside the sRGB gamut can be specified in Cascading Style Sheets by making one or more of the red, green and blue components negative or greater than 100%, so the color space is theoretically an unbounded extrapolation of sRGB similar to scRGB.[3] Specifying a non-sRGB color this way requires the RGB() function call; it is impossible with the hexadecimal syntax (and thus impossible in legacy HTML documents that do not use CSS).
 <br>
 <br>
-    The first versions of Mosaic and Netscape Navigator used the X11 color names as the basis for their color lists, as both started as X Window System applications. Web colors have an unambiguous colorimetric definition, sRGB, which relates the chromaticities of a particular phosphor set, a given transfer curve, adaptive whitepoint, and viewing conditions.[4] These have been chosen to be similar to many real-world monitors and viewing conditions, in order to allow rendering to be fairly close to the specified values even without color management. User agents vary in the fidelity with which they represent the specified colors. More advanced user agents use color management to provide better color fidelity; this is particularly important for Web-to-print applications. </p>
-    <div class="d-flex">
+    The first versions of Mosaic and Netscape Navigator used the X11 color names as the basis for their color lists, as both started as X Window System applications. Web colors have an unambiguous colorimetric definition, sRGB, which relates the chromaticities of a particular phosphor set, a given transfer curve, adaptive whitepoint, and viewing conditions.[4] These have been chosen to be similar to many real-world monitors and viewing conditions, in order to allow rendering to be fairly close to the specified values even without color management. User agents vary in the fidelity with which they represent the specified colors. More advanced user agents use color management to provide better color fidelity; this is particularly important for Web-to-print applications.
+  </p>
+    <div class="d-flex" id="hexCircles">
       <div>
         <div id="hexCirc1"></div>
         <div id="hsbCodeRed">RED  Hex: #FF0000</div>
@@ -391,11 +391,11 @@
         <div id="hsbCodeGreen">GREEN  Hex: #00FF00</div>
      </div>
      <div>
-       <div id="hexCirc3"></div>
+        <div id="hexCirc3"></div>
         <div id="hsbCodeBlue">BLUE  Hex: #0000FF</div>
       </div>
     </div>
-  <div id="cont1"></div>
+    <div class="divLine"></div>
 </div>
 <!-- ------------- MUNS  ------------------------ -->
  <div id="container6" class="container">
@@ -432,11 +432,11 @@ Munsell determined the spacing of colors along these dimensions by taking measur
 
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
 
 <script src="color.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
