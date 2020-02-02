@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   
-<title>DOM Practice</title>
+<title>COLOR CHARTS</title>
 
 <style>
+body {
+  position: relative;
+}
 .divLine {
   width: 1100px;
   height: 2px;
@@ -17,13 +22,7 @@
   margin-top: 50px;
   margin-bottom: 1px;
 }
-#container {
-  padding: 0px;
-}
-#container2 {
-  margin: 0px;
-  padding: 0px;
-}
+
 /* Dynamic Elements Created w/EL */
 #rndColorbtn {
   width: 200px;
@@ -157,54 +156,61 @@
 #hexCirc3 {
   background: #00f;
 }
+/* ------------------MUNSELL---------------------------- */
+#muns-image3 {
+  padding-left: 200px;
+  padding-top: 50px;
+}
 
 </style>
 
 </head> 
-<body>
+<body data-spy="scroll" data-target=".navbar">
 <!-- -------------------NAVBAR--------------------- -->
 
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
   <div class="container">  
-    <a class="navbar-brand" href="#" >Navbar Fixed Top</a>
+    <a class="navbar-brand" href="#" >Logo???</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto" >
+    <div class="collapse navbar-collapse navbar" id="navbarNav">
+      <ul class="nav navbar-nav ml-auto" >
         <li class="nav_item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#home">Home</a>
         </li>
         <li class="nav_item">
-          <a class="nav-link" href="#">RGB</a>
+          <a class="nav-link" href="#els">Event Listeners</a>
         </li>
         <li class="nav_item">
-          <a class="nav-link" href="#">HSB</a>
+          <a class="nav-link" href="#rcs">Random Color Selectors</a>
         </li>
-        <li class="nav_item">
-          <a class="nav-link" href="#">HEX Codes</a>
-        </li>
-        <li class="nav_item">
-          <a class="nav-link" href="#">Munsell</a>
-        </li>
-        <li class="nav_item">
-          <a class="nav-link" href="#">Color Theory</a>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Color Theories</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#rgb">RGB</a>
+            <a class="dropdown-item" href="#hsb">HSB</a>
+            <a class="dropdown-item" href="#hex">HEX</a>
+            <a class="dropdown-item" href="#muns">Munsell</a>
+          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Color Spectrum</a>
+          <a class="nav-link" href="#cspec">Color Spectrum</a>
         </li>
         <li class="nav_item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav_item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
       </ul> 
     </div>
   </div>
 </nav>
+
+
 <!-- ---------------------MAIN HEADER----------------- -->
-<div class="container">
+<div class="container" id="home">
   <h1 class="col mt-5">COLOR CHARTS:</h1> 
   <h2 class="col">Explorations in Color and Space</h2>
 </div>
@@ -265,7 +271,7 @@
     <div class="divLine"></div>
 
 <!-- -----------------EVENT LISTENERS---------------- -->
-<div id="container" class="container">
+<div class="container" id="els">
   <h3 class="col mt-3 mb-3">Dynamic Elements Created w/Event Listeners</h3>
 <p>The section demonstrates the use of event listeners to dynamically change CSS stylized div elements.  Examples of hideing and element, changing an elements color, and changing an elements position are shown. </p>
   
@@ -290,7 +296,7 @@
 
 <!-- -------------RANDOM COLOR SELECTORS--------------- -->
 
-<div id="container2" class="container">
+<div class="container" id="rcs">
   <h3 class="col-md-12 col-sm-2 mt-3 mb-3">Random Color Selectors</h3>
   <p class="col-md-12 col-sm-2 mb-5">This section uses Dom manipulation to create elements and random color selectors with standard JavaScript.</p>
   
@@ -309,7 +315,7 @@
 
 
 <!-- ----------------------RGB---------------------------- -->
-<div id="container3" class="container">
+<div id="rgb" class="container">
      
   <h3 class="col mt-3 mb-3">Color Paradigm: RBG</h3>
   
@@ -343,7 +349,7 @@
 </div>
 
 <!-- -----------  HSB -------------------------- -->
-<div id="container4" class="container">
+<div id="hsb" class="container">
 
     <h3 class="col mt-3 mb-3">Color Paradigm: HSB</h3>
 
@@ -368,7 +374,7 @@
   <div class="divLine"></div>
 </div>
 <!-- -------------  HEX ------------------------ -->
-<div id="container5" class="container">
+<div id="hex" class="container">
   <h3 class="col mt-3 mb-3">Color Paradigm: HEX</h3>
 
   <img src="hex.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="hsb-image">
@@ -398,12 +404,13 @@
     <div class="divLine"></div>
 </div>
 <!-- ------------- MUNS  ------------------------ -->
- <div id="container6" class="container">
+ <div id="muns" class="container">
     <h3 class="col mt-3 mb-3">Color Paradigm: Munsell</h3>
-
-<img src="munsell.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="mun_model2" alt="muns_model">
+<div>
+<img src="munsell-combined-imgs.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="muns_model">
     
-<img src="Munsell_1943.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="mun_model2">
+
+<div>
 
   <p class="col-md-12 col-sm-3">In colorimetry, the Munsell color system is a color space that specifies colors based on three properties of color: hue, value (lightness), and chroma (color purity). It was created by Professor Albert H. Munsell in the first decade of the 20th century and adopted by the United States Department of Agriculture (USDA) as the official color system for soil research in the 1930s.
     <br>
@@ -424,18 +431,24 @@ Munsell determined the spacing of colors along these dimensions by taking measur
 — Albert H. Munsell, “A Pigment Color System and Notation”
 </p>
 </p>
-
-  <div id="muns-image3"><img src="munsell_primary_secondary_colors.png" alt="Munsell primary and secodnary colors" width=80%></div>
+<div>
+  <div id="muns-image3"><img src="munsell_primary_secondary_colors.png" alt="Munsell primary and secodnary colors" width=60%></div>
   <div class="divider-7"></div>
 </div>
-  
+
+</div>
+<div class="divLine"></div>
+<!-- -----------------COLOR SPECTRUM -->
+<div id="cspec" class="container"></div>
+<h3 class="col mt-3 mb-3">Color Spectrum</h3>
+<div></div>
 
 
 
 
 
 <script src="color.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
