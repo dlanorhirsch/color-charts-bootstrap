@@ -78,25 +78,24 @@ p {
   transition: transform .3s cubic-bezier(.64,.31,.5,.93);
 }
 /* Random Color Selectors----------------*/
-.squares {
-  justify-content: center;
-}
+
 #mousePad {
-  width: 200px;
-  height: 200px;
-  margin-right: 30px;
-  margin-top: 24px;
   border: 1px solid black;
+  max-width: 150px;
+  min-width: 150px;
+}
+#box4 {
+  width: 150px;
+  height: 150px;
 }
 #rndColorSq {
   border: 1px solid black;
-  max-width: 200px;
-  margin: 20px 30px 20px 40px;
-}
-#box4 {
-  max-width: 200px;
-  margin: 20px 30px 20px 40px;
-}
+  width: 150px;
+  width: 150px;
+  
+
+  }
+
 /* --------------RGB---------------------  */
 #chips {
   justify-content: center;
@@ -286,23 +285,21 @@ p {
 <!-- -------------RANDOM COLOR SELECTORS--------------- -->
 <div class="container">
   <div class="row">
-    <div class="col" id=rcs
+    <div class="col" id="rcs"
     style="padding-top: 70px; padding-bottom:70px">
       <h3>Random Color Selectors</h3>
       <p>This section uses Dom manipulation to create elements and random color selectors with standard JavaScript.
       </p>
-      <div class="row d-flex squares">
-        <div>
-          <div class="col-sm-12 col-d-4"></div>
-          <div id="mousePad" class="col"></div> 
-          <caption id="mouse-pad_text" class="">(Hover over the box.)</caption>
+      <div class="d-flex row justify-content-around" id="squares">
+        <div class="d-flex">
+          <div id="mousePad"></div> 
+          <!-- <caption id="mouse-pad_text" class="">(Hover over the box.)</caption> -->
         </div>
-        
-        <div id="box4" class="col"></div>
-       
-        <button class="col" id="rndColorSq">Click Me</button>
+        <div>
+          <div id="box4"></div>
+        </div>
+          <button id="rndColorSq">Click Me</button>
       </div>
-
     </div>
   </div>
     <div class="divLine"></div>
@@ -395,16 +392,16 @@ p {
           <div id="hexCirc1"></div>
           <div id="hsbCodeRed">RED  Hex: #FF0000</div>
         </div>
-      <div>
-        <div id="hexCirc2"></div>
-        <div id="hsbCodeGreen">GREEN  Hex: #00FF00</div>
-      </div>
-      <div>
-        <div id="hexCirc3"></div>
-        <div id="hsbCodeBlue">BLUE  Hex: #0000FF</div>
+        <div>
+          <div id="hexCirc2"></div>
+          <div id="hsbCodeGreen">GREEN  Hex: #00FF00</div>
+        </div>
+        <div>
+          <div id="hexCirc3"></div>
+          <div id="hsbCodeBlue">BLUE  Hex: #0000FF</div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
     <div class="divLine"></div>
 </div>
@@ -441,14 +438,36 @@ p {
     style="padding-top: 70px; padding-bottom: 70px">
       <h3>Color Gamut vs. Spectrum</h3>
 
-      <p>Color gamut and color spectrum are sometimes used interchangeably.  However, they are not the same.  Generally speaking, a color spectrum refers to a specific range of colors.  For example a color can be said to be at the beginning, middle or end of a spectrum.  Gamut on the other hand refers a total range that is a subset of color that can be reproduced by a specific system.  When referencing printing methods, electronic reproduction of color by cameras, computers or televisions, each can be said to have a particular color gamut depending on the method used to create the color.  Further, each of the color systems referenced above can be said to have a specific color gamut which they are able to reproduce.  The diagrams below demonstrate the gamuts of various color systems.  Note that no color system is able to fully reproduce the visible color spectrum.
+      <p>Color gamut and color spectrum are sometimes used interchangeably.  However, they are not the same.  Generally speaking, a color spectrum refers to a specific range of colors.  For example a color can be said to be at the beginning, middle or end of a spectrum.  Gamut on the other hand refers a total range that is a subset of color that can be reproduced by a specific system.  When referencing printing methods, electronic reproduction of color by cameras, computers or televisions, each can be said to have a particular color gamut depending on the method used to create the color.  The RGB, HSB and HEX coding systems above fall into the srgb color gamut as seen in the diagram below. The gray area represents the visible color spectrum, the triangle represents the srgb (standard) gamut. Note that no color system is able to fully reproduce the visible color spectrum.
       </p>
+      <div class="row justify-content-center">
+      <img  src="CIExy1931_srgb_gamut.png" width=60% alt="img srgb color gamut">
+    </div>
+    </div>
+  </div>
+    <div class="divLine"></div>
+</div>
+<!-- -----------------ABOUT---------------- -->
+<div class="container">
+  <div class="row">
+    <div class="col" id="about"
+    style="padding-top: 70px; padding-bottom: 70px">
+      <h3>ABOUT</h3>
     </div>
   </div>
     <div class="divLine"></div>
 </div>
 
-
+<!-- ----------------CONTACT--------------- -->
+<div class="container">
+  <div class="row">
+    <div class="col" id="contact"
+    style="padding-top: 70px; padding-bottom: 70px">
+      <h3>CONTACT</h3>
+    </div>
+  </div>
+    <div class="divLine"></div>
+</div>
 
 <script src="color.js"></script>
 
