@@ -12,6 +12,9 @@
 <title>COLOR CHARTS</title>
 
 <style>
+  body {
+    position: relative;
+  }
 p {
   font-size: 1.25em;
 }
@@ -175,12 +178,13 @@ p {
 </style>
 
 </head> 
-<body data-spy="scroll" data-target=".navbar" style="position: relative">
+
 <!-- -------------------NAVBAR--------------------- -->
 
-<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark" >
-  <div class="container">  
-    <a class="navbar-brand" href="#" >Logo???</a>
+<body data-spy="scroll" data-target="#main-nav">
+  <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" id="main-nav">
+    <div class="container">  
+      <a class="navbar-brand" href="#" >Logo???</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -196,20 +200,12 @@ p {
           <a class="nav-link" href="#rcs">Random Color Selectors</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"
-          href="#" id="navbardrop"
-          data-toggle="dropdown">
-            Color Theories
-        </a>
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Color Theories</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" 
-              href="#rgb">RGB</a>
-            <a class="dropdown-item" 
-              href="#hsb">HSB</a>
-            <a class="dropdown-item" 
-              href="#hex">HEX</a>
-            <a class="dropdown-item"              
-              href="#muns">Munsell</a>  
+            <a class="dropdown-item" href="#rgb">RGB</a>
+            <a class="dropdown-item" href="#hsb">HSB</a>
+            <a class="dropdown-item" href="#hex">HEX</a>
+            <a class="dropdown-item" href="#muns">Munsell</a>  
           </div>
         </li>
         <li class="nav-item">
@@ -235,8 +231,11 @@ p {
     style="padding-top: 70px; padding-bottom: 70px">
       <h1>COLOR CHARTS:</h1> 
       <h2>Explorations in Color and Space</h2>
+      <div class="divLine"></div>
     </div>
+    
   </div>
+  
 </div>
     <!-- ----------- PROJECT DESCRIPTION ----------- -->
     <div class="container">
@@ -469,9 +468,42 @@ p {
     <div class="divLine"></div>
 </div>
 
+
 <script src="color.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+crossorigin="anonymous"></script>
+
+<script>
+  // Get the current year for the copyright
+  $('#year').text(new Date().getFullYear());
+  $('body').scrollspy({ target: '#main-nav '});
+
+  // Smooth Scrolling
+  $('#main-nav a').on('click', function (e) {
+    // Check for a hash value
+    if (this.hash !== '') {
+      // Prevent default behavior
+      e.preventDefault();
+
+      // Store hash
+      const hash = this.hash;
+
+      // Animate smooth scroll
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function () {
+        // Add hash to URL after scroll
+        window.location.hash = hash;
+      });
+    }
+  });  
+</script>
+
 </body>
 </html>
