@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <title>COLOR CHARTS</title>
 
 <style>
@@ -17,13 +18,17 @@
   }
 p {
   font-size: 1.25em;
+  
+}
+.nav-link {
+  font-size: 1.3rem !important;
 }
 .divLine {
   width: 1100px;
   width: 100%;
   height: 2px;
   background: grey;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 1px;
 }
 
@@ -184,7 +189,7 @@ p {
 <body data-spy="scroll" data-target="#main-nav">
   <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" id="main-nav">
     <div class="container">  
-      <a class="navbar-brand" href="#" >Logo???</a>
+      <a class="navbar-brand"><img src="ColorChartsLOGO.png" class="col-5 img-fluid max-width:100% height: auto float-left ml-1"  alt="Color Charts Logo"></a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -220,15 +225,22 @@ p {
           <a class="nav-link" 
             href="#contact">Contact</a>
         </li>
+        
       </ul> 
     </div>
   </div>
-</nav>
+  </nav>
+<div class="blue-line sticky-top" style="height:  100px; background:  blue"></div>
+
+
+<!-- Search Bar -->
+
+
 <!-- ---------------------MAIN HEADER----------------- -->
 <div class="container">
    <div class="row">
     <div class="col" id="home"
-    style="padding-top: 70px; padding-bottom: 70px">
+    style="padding-top: 200px; padding-bottom: 70px">
       <h1>COLOR CHARTS:</h1> 
       <h2>Explorations in Color and Space</h2>
       <div class="divLine"></div>
@@ -256,7 +268,7 @@ p {
   <div class="container">
     <div class="row">
       <div class="col" id="els"
-      style="padding-top: 70px;padding-bottom: 70px">
+      style="padding-top: 170px;padding-bottom: 0px">
         <h2>Dynamic Elements Created w/Event Listeners</h2>
         <p>The section demonstrates the use of event listeners to dynamically change CSS stylized div elements.  Examples of hiding an element, changing an elements color, and changing an elements position are demonstrated. 
         </p>
@@ -285,7 +297,7 @@ p {
 <div class="container">
   <div class="row">
     <div class="col" id="rcs"
-    style="padding-top: 70px; padding-bottom:70px">
+    style="padding-top: 170px; padding-bottom:0px">
       <h3>Random Color Selectors</h3>
       <p>This section uses Dom manipulation to create elements and random color selectors with standard JavaScript.
       </p>
@@ -307,7 +319,7 @@ p {
 <div class="container">
   <div class="row">
     <div class="col" id="rgb" 
-    style="padding-top: 70px; padding-bottom: 70px"> 
+    style="padding-top: 170px; padding-bottom: 70px"> 
       <h3>Color Paradigm: RBG</h3>
       <img src="rgb.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="tri-color circles">
 
@@ -343,7 +355,7 @@ p {
 <div class="container">
   <div class="row">
     <div class="col" id="hsb"
-    style="padding-top: 70px; padding-bottom: 70px">
+    style="padding-top: 170px; padding-bottom: 70px">
     <h3>Color Paradigm: HSB</h3>
 
     <img src="hsb.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="hsb-image">
@@ -372,7 +384,7 @@ p {
 <div class="container">
   <div class="row">
     <div class="col" id="hex"
-    style="padding-top: 70px; padding-bottom: 70px">
+    style="padding-top: 170px; padding-bottom: 70px">
       <h3>Color Paradigm: HEX</h3>
 
       <img src="hex.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="hsb-image">
@@ -408,7 +420,7 @@ p {
  <div class="container">
    <div class="row">
     <div class="col" id="muns"
-    style="padding-top: 70px; padding-bottom: 70px">
+    style="padding-top: 170px; padding-bottom: 70px">
     <h3 class="col">Color Paradigm: Munsell</h3>
     <img src="munsell-combined-imgs.png" class="col-3 img-fluid max-width:100% height: auto float-left" alt="muns_model">
 
@@ -434,7 +446,7 @@ p {
 <div class="container">
   <div class="row">
     <div class="col" id="cspec"
-    style="padding-top: 70px; padding-bottom: 70px">
+    style="padding-top: 170px; padding-bottom: 50px">
       <h3>Color Gamut vs. Spectrum</h3>
 
       <p>Color gamut and color spectrum ae sometimes used interchangeably.  However, they are not the same.  Generally speaking, a color spectrum refers to a specific range of colors.  For example a color can be said to be at the beginning, middle or end of a spectrum.  Gamut on the other hand refers a total range that is a subset of color that can be reproduced by a specific system.  When referencing printing methods, electronic reproduction of color by cameras, computers or televisions, each can be said to have a particular color gamut depending on the method used to create the color.  The RGB, HSB and HEX coding systems above fall into the srgb color gamut as seen in the diagram below. The gray area represents the visible color spectrum, the triangle represents the srgb (standard) gamut. Note that no color system is able to fully reproduce the visible color spectrum.
@@ -450,7 +462,7 @@ p {
 <div class="container">
   <div class="row">
     <div class="col" id="about"
-    style="padding-top: 70px; padding-bottom: 70px">
+    style="padding-top: 50px; padding-bottom: 70px">
       <h3>ABOUT</h3>
     </div>
   </div>
@@ -461,7 +473,7 @@ p {
 <div class="container">
   <div class="row">
     <div class="col" id="contact"
-    style="padding-top: 70px; padding-bottom: 70px">
+      style="padding-top: 50px; padding-bottom: 70px">
       <h3>CONTACT</h3>
     </div>
   </div>
